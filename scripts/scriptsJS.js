@@ -25,7 +25,7 @@ window.onload = function() {
             labelOptionPeople: "Pessoas",
             labelOptionNature: "Natureza",
             labelOptionSports: "Desporto",
-            lLabelOptionTechnics: "Técnica",
+            labelOptionTechnics: "Técnica",
             labelOptionTransport: "Transporte",
             btnButtonGenerator: "Gerar imagem"
 
