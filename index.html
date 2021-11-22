@@ -22,11 +22,10 @@
         </header>
 
         <div id="language-section">
-            <p><span id="lblLang">Escolha o idioma:</span> <a href="#pt" class="option-language" id="pt-option-language" data-reload>PT <img
-                            src="icons/portugal.png" alt="portuguese language flag"></a> | <a href="#eng" class="option-language" id="eng-option-language" data-reload>ENG <img src="icons/united-kingdom.png"
+            <p><span id="lblLang">Escolha o idioma:</span> <a href="#pt" class="option-language" id="pt-option-language" data-reload>PT <img src="icons/portugal.png"
+                            alt="portuguese language flag"></a> <a href="#eng" class="option-language" id="eng-option-language" data-reload>ENG <img src="icons/united-kingdom.png"
                             alt="english language flag"></a></p>
         </div>
-
         <main>
 
 
@@ -37,12 +36,13 @@
                 <form id="frmImageGenerator">
 
                     <label class="special-label"><span id="lblWhatToDo">Preencha os campos abaixo para gerar a
-                        imagem:</span> </label><br>
+                                imagem:</span> </label><br>
 
                     <span class="span-required" id="lblFieldRequired">* campos obrigatórios</span>
 
                     <div class="form-item">
-                        <label for=""><span id="lblImgDimensions">Dimensão da imagem :</span><span class="span-required">*</span></label>
+                        <label for=""><span id="lblImgDimensions">Dimensão da imagem :</span><span
+                                    class="span-required">*</span></label>
                         <input type="number" id="alturaImagem" placeholder="Altura">
                         <span>X</span>
                         <input type="number" id="larguraImagem" placeholder="Largura">
@@ -50,17 +50,19 @@
                     </div>
 
                     <div class="form-item">
-                        <label for="" id="colorOptionLabel"><span id="lblImgColor">Côr da imagem</span><span class="span-required">*</span> :
+                        <label for="" id="colorOptionLabel"><span id="lblImgColor">Côr da imagem</span><span
+                                    class="span-required">*</span> :
                             </label>
-                        <label for="greyImage"><span id="lblColorGreysScale">Tons de cinza</span> <input type="radio" value="cinza" name="colorOption"
-                                    id="greyImage"></label>
+                        <label for="greyImage"><span id="lblColorGreysScale">Tons de cinza</span> <input
+                                    type="radio" value="cinza" name="colorOption" id="greyImage"></label>
                         <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-                        <label for="coloredImage"><span id="lblColoredColorScale">Colorida</span> <input type="radio" value="colour" name="colorOption"
-                                    id="coloredImage"></label> <br>
+                        <label for="coloredImage"><span id="lblColoredColorScale">Colorida</span> <input
+                                    type="radio" value="colour" name="colorOption" id="coloredImage"></label> <br>
                     </div>
 
                     <div class="form-item">
-                        <label for="optionImageType"><span id="lblImgType">Tipo de imagem</span><span class="span-required">*</span> : </label>
+                        <label for="optionImageType"><span id="lblImgType">Tipo de imagem</span><span
+                                    class="span-required">*</span> : </label>
                         <select id="optionImageType">
                                 <option value="" id="lblOptionSelect">Escolha o tipo de imagem : </option>
                                 <option value="abstract" id="lblOptionAbstract">Abstracto</option>
@@ -84,7 +86,13 @@
                     <button type="submit" id="btnButtonGenerator">Gerar imagem</button>
                 </form>
             </section>
+            <ul class="squares">
 
+            </ul>
+
+            <ul class="circles">
+
+            </ul>
 
 
         </main>
@@ -113,65 +121,6 @@
     <script src="libs/bootbox.all.min.js"></script>
     <script src="libs/bootbox.locales.min.js"></script>
     <script src="libs/fontawesome-5.15.4/js/all.min.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            $('#btnButtonGenerator').on('click', function() {
-                $('#frmImageGenerator').on('submit', function(evento) {
-                    evento.preventDefault();
-                });
-
-                let imgType = $('#optionImageType');
-                let imgWidth = $('#larguraImagem');
-                let imgHeight = $('#alturaImagem');
-                let imgColourType = $('input[type="radio"]');
-                let urlGenerator = "https://lorempixel.com/";
-
-                if (imgType.val() != "" && imgWidth.val() != "" && imgHeight.val() != "") {
-                    $('input, select').css('border-color', '#69385c');
-                    if ($('#greyImage').is(':checked')) {
-
-                        imgColour = "g";
-                        imgType.prop('disabled', true);
-                        imgWidth.prop('disabled', true);
-                        imgHeight.prop('disabled', true);
-                        imgColourType.prop('disabled', true);
-
-                        urlGenerator += imgColour + "/" + imgWidth.val() + "/" + imgHeight.val() + "/" + imgType.val();
-
-                        $(':input', '#frmImageGenerator').not(':button, :submit, :reset, :hidden').val("").removeAttr('checked').removeAttr('selected');
-                        window.location.href = urlGenerator;
-
-                    } else if ($('#coloredImage').is(':checked')) {
-
-                        imgColour = "";
-                        imgType.prop('disabled', true);
-                        imgWidth.prop('disabled', true);
-                        imgHeight.prop('disabled', true);
-                        imgColourType.prop('disabled', true);
-
-                        urlGenerator += imgWidth.val() + "/" + imgHeight.val() + "/" + imgType.val();
-
-                        $(':input', '#frmImageGenerator').not(':button, :submit, :reset, :hidden').val("").removeAttr('checked').removeAttr('selected');
-                        window.location.href = urlGenerator;
-
-                    }
-                } else {
-                    $('input, select').css('border-color', 'crimson');
-                    $('.span-required').fadeIn();
-
-                    bootbox.alert({
-                        size: 'medium',
-                        title: '    ',
-                        message: '<p>Por favor preencha os campos vázios !</p>',
-                    });
-                }
-
-            })
-
-        });
-    </script>
 
 
 </body>

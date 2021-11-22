@@ -1,7 +1,25 @@
 window.onload = function() {
 
-    var dataReload = window.document.querySelectorAll("[data-reload]");
+    const dataReload = document.querySelectorAll('[data-reload]');
+    const btnGenerator = document.querySelector('#btnButtonGenerator');
+    const frmGenerator = document.querySelector('#frmImageGenerator');
+    const ulSquares = document.querySelector('ul.squares');
+    const ulCircles = document.querySelector('ul.circles');
 
+    document.querySelector('input[type = "number"]#alturaImagem').addEventListener('keypress', function(event) {
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+            alert("Desculpe, letras não são permitidas. Digite apenas números nos inputs");
+        } else if (event.keyCode >= 97 && event.keyCode <= 122) {
+            alert("Desculpe, letras não são permitidas. Digite apenas números nos inputs");
+        }
+    });
+    document.querySelector('input[type = "number"]#larguraImagem').addEventListener('keypress', function(event) {
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+            alert("Desculpe, letras não são permitidas. Digite apenas números nos inputs");
+        } else if (event.keyCode >= 97 && event.keyCode <= 122) {
+            alert("Desculpe, letras não são permitidas. Digite apenas números nos inputs");
+        }
+    });
     var language = {
         pt: {
             labelToChooseLang: "Escolha o idioma:",
@@ -86,7 +104,8 @@ window.onload = function() {
             lblOptionTechnics.textContent = language.eng.labelOptionTechnics;
             lblOptionTransport.textContent = language.eng.labelOptionTransport;
             btnButtonGenerator.textContent = language.eng.btnButtonGenerator;
-
+            document.querySelector('#alturaImagem').setAttribute('placeholder', 'Height');
+            document.querySelector('#larguraImagem').setAttribute('placeholder', 'Width');
 
 
         }
@@ -115,15 +134,71 @@ window.onload = function() {
             lblOptionTechnics.textContent = language.pt.labelOptionTechnics;
             lblOptionTransport.textContent = language.pt.labelOptionTransport;
             btnButtonGenerator.textContent = language.pt.btnButtonGenerator;
+            document.querySelector('#alturaImagem').setAttribute('placeholder', 'Altura');
+            document.querySelector('#larguraImagem').setAttribute('placeholder', 'Largura');
         }
     }
 
-    for (i = 0; i <= dataReload.length; i++) {
-        dataReload[i].onclick = function() {
+    for (let i = 0; i < dataReload.length; i++) {
+        dataReload[i].addEventListener('click', function() {
             setTimeout(function() {
                 location.reload();
             }, 100);
+        });
+    };
 
-        };
+    for (let i = 0; i < 11; i++) {
+        const li = document.createElement('li');
+
+        const getRandomValues = function(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        const size = Math.floor(getRandomValues(10, 100));
+        const position = Math.floor(getRandomValues(1, 99));
+        const delay = getRandomValues(5, 0.1);
+        const duration = getRandomValues(24, 12);
+
+        li.style.width = `${size}px`;
+        li.style.height = `${size}px`;
+        li.style.bottom = `-${size}px`;
+
+        li.style.left = `${position}%`;
+
+        li.style.animationDelay = `${delay}s`;
+        li.style.animationDuration = `${duration}s`;
+        li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
+
+        ulSquares.appendChild(li);
+
     }
+
+    for (let i = 0; i < 8; i++) {
+        const li = document.createElement('li');
+
+        const getRandomValues = function(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        const size = Math.floor(getRandomValues(10, 100));
+        const position = Math.floor(getRandomValues(1, 99));
+        const delay = getRandomValues(5, 0.1);
+        const duration = getRandomValues(24, 12);
+
+        li.style.width = `${size}px`;
+        li.style.height = `${size}px`;
+        li.style.bottom = `-${size}px`;
+        li.style.left = `${size}%`;
+
+
+        li.style.animationDelay = `${delay}s`;
+        li.style.animationDuration = `${duration}s`;
+        li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
+
+        ulCircles.appendChild(li);
+
+
+    }
+
+
 }
