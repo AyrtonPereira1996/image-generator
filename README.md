@@ -1,3 +1,8 @@
 # Image generator with javascript
 
-This repository is about a project that a decide to make to improve my self using some skills that a learn studying a bit more of Javascript and another skills as HTML and CSS. Bellow as pictures of the javascript application
+This repository is about a project that I decided to create to improve and test my own skills of developing things with Html, CSS and JavaScript.
+Below has pictures of this web app:
+
+![Captura de ecrã de 2021-11-24 10-54-02](https://user-images.githubusercontent.com/40174805/143205950-381a252e-967c-4849-8f30-2924562083d9.png)
+
+Give a star if you like!
