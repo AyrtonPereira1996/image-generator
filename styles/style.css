@@ -326,7 +326,7 @@
      color: rgba(255, 228, 196, .8)
  }
  
- ul.squares li {
+ ul.squares li.li-square {
      width: 40px;
      height: 40px;
      background-color: #210124ce;
@@ -339,7 +339,12 @@
      animation-iteration-count: infinite;
  }
  
- ul.circles li {
+ .clickOnIt {
+     animation-name: clickOnObjects;
+     animation-duration: 1s;
+ }
+ 
+ ul.circles li.li-circle {
      width: 40px;
      height: 40px;
      border-radius: 100%;
@@ -753,5 +758,22 @@
          -moz-transform: translateX(0);
          -ms-transform: translateX(0);
          -o-transform: translateX(0);
+     }
+ }
+ 
+ @keyframes clickOnObjects {
+     from {
+         transform: translateX(0);
+         -webkit-transform: translateX(0);
+         -moz-transform: translateX(0);
+         -ms-transform: translateX(0);
+         -o-transform: translateX(0);
+     }
+     to {
+         transform: translateX(20%);
+         -webkit-transform: translateX(20%);
+         -moz-transform: translateX(20%);
+         -ms-transform: translateX(20%);
+         -o-transform: translateX(20%);
      }
  }

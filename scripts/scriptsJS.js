@@ -149,6 +149,7 @@ window.onload = function() {
 
     for (let i = 0; i < 11; i++) {
         const li = document.createElement('li');
+        li.classList.add('li-square');
 
         const getRandomValues = function(min, max) {
             return Math.random() * (max - min) + min;
@@ -169,12 +170,25 @@ window.onload = function() {
         li.style.animationDuration = `${duration}s`;
         li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
 
+
+
         ulSquares.appendChild(li);
+
+        li.addEventListener('mouseover', function() {
+            li.style.animationPlayState = "paused";
+        });
+
+        li.addEventListener('mouseout', function() {
+            li.style.animationPlayState = "running";
+        });
+
 
     }
 
     for (let i = 0; i < 8; i++) {
         const li = document.createElement('li');
+        li.classList.add('li-circle');
+
 
         const getRandomValues = function(min, max) {
             return Math.random() * (max - min) + min;
@@ -196,6 +210,14 @@ window.onload = function() {
         li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
 
         ulCircles.appendChild(li);
+
+        li.addEventListener('mouseover', function() {
+            li.style.animationPlayState = "paused";
+        });
+
+        li.addEventListener('mouseout', function() {
+            li.style.animationPlayState = "running";
+        });
 
 
     }
