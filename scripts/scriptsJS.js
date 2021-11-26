@@ -6,6 +6,8 @@ window.onload = function() {
     const ulSquares = document.querySelector('ul.squares');
     const ulCircles = document.querySelector('ul.circles');
 
+    // INTRUCTIONS TO DETECT IF USER TYPED LETTER OR NUMBERS
+
     document.querySelector('input[type = "number"]#alturaImagem').addEventListener('keypress', function(event) {
         if (event.keyCode >= 65 && event.keyCode <= 90) {
             alert("Desculpe, letras não são permitidas. Digite apenas números nos inputs");
@@ -20,6 +22,9 @@ window.onload = function() {
             alert("Desculpe, letras não são permitidas. Digite apenas números nos inputs");
         }
     });
+
+    // INTRUCTIONS OF ENGLISH AND PORTUGUESE LANGUAGES 
+
     var language = {
         pt: {
             labelToChooseLang: "Escolha o idioma:",
@@ -147,6 +152,8 @@ window.onload = function() {
         });
     };
 
+    // INSTRUCTIONS TO CONTROL SQUARES OBJECTS
+
     for (let i = 0; i < 11; i++) {
         const li = document.createElement('li');
         li.classList.add('li-square');
@@ -184,6 +191,8 @@ window.onload = function() {
 
 
     }
+
+    // INSTRUCTIONS TO CONTROL CIRCLES OBJECTS
 
     for (let i = 0; i < 8; i++) {
         const li = document.createElement('li');

@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+    // INSTRUCTIONS TO GENERATE RANDOM PICTURES
+
     $('#btnButtonGenerator').on('click', function() {
         $('#frmImageGenerator').on('submit', function(evento) {
             evento.preventDefault();

@@ -1,3 +1,5 @@
+ /*---------- FONT RULES ----------*/
+ 
  @font-face {
      font-family: bangers;
      src: url(../fonts/Bangers-Regular.ttf)
@@ -361,6 +363,7 @@
      -ms-border-radius: 100%;
      -o-border-radius: 100%;
  }
+ /*---------- RULES FOR @MEDIA SCREEN ----------*/
  
  @media only screen and (max-width:600px) {
      main {
@@ -600,6 +603,8 @@
          margin-top: 40px!important
      }
  }
+ /*---------- RULES FOR ANIMATIONS (@KEYFRAMES) ----------*/
+ /* ANIMATION FOR H1 TITLE */
  
  @keyframes moveMainTitleDown {
      0% {
@@ -635,6 +640,7 @@
          -o-transform: translateY(0);
      }
  }
+ /* ANIMATION FOR LABEL OF THE INPUT */
  
  @keyframes labelFromLeftToRight {
      from {
@@ -654,6 +660,7 @@
          -o-transform: translateX(0);
      }
  }
+ /* ANIMATIONS FOR LANGUAGE OPTIONS */
  
  @keyframes anchorFromTopToCenter {
      from {
@@ -673,6 +680,7 @@
          -o-transform: translateY(0);
      }
  }
+ /* ANIMATION FOR IMAGE */
  
  @keyframes imgOpacityChange {
      from {
@@ -685,6 +693,7 @@
          opacity: 1;
      }
  }
+ /* ANIMATION TI SQUARE OBJECTS */
  
  @keyframes upSquare {
      from {
@@ -707,6 +716,7 @@
          -o-transform: translateY(-900px)rotate(960deg);
      }
  }
+ /* ANIMATION FOR CIRCLES OBJECTS */
  
  @keyframes upCircles {
      from {
@@ -729,6 +739,7 @@
          -o-transform: translateY(-900px)rotate(960deg);
      }
  }
+ /* ANIMATION FOR ERROR */
  
  @keyframes errorShake {
      0% {
@@ -758,22 +769,5 @@
          -moz-transform: translateX(0);
          -ms-transform: translateX(0);
          -o-transform: translateX(0);
-     }
- }
- 
- @keyframes clickOnObjects {
-     from {
-         transform: translateX(0);
-         -webkit-transform: translateX(0);
-         -moz-transform: translateX(0);
-         -ms-transform: translateX(0);
-         -o-transform: translateX(0);
-     }
-     to {
-         transform: translateX(20%);
-         -webkit-transform: translateX(20%);
-         -moz-transform: translateX(20%);
-         -ms-transform: translateX(20%);
-         -o-transform: translateX(20%);
      }
  }
