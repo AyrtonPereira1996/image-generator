@@ -6,6 +6,7 @@ window.onload = function() {
     const ulSquares = document.querySelector('ul.squares');
     const ulCircles = document.querySelector('ul.circles');
 
+
     // INTRUCTIONS TO DETECT IF USER TYPED LETTER OR NUMBERS
 
     document.querySelector('input[type = "number"]#alturaImagem').addEventListener('keypress', function(event) {
@@ -36,20 +37,11 @@ window.onload = function() {
             labelColorGreysScale: "Tons de cinza",
             labelColoredColorScale: "Colorida",
             labelImgType: "Tipo de imagem",
-            labelOptionSelect: "Escolha o tipo de imagem : ",
-            labelOptionAbstract: "Abstracto",
-            labelOptionAnimals: "Animal",
-            labelOptionBusiness: "Negócio",
-            labelOptionCats: "Gatos",
-            labelOptionCity: "Cidade",
-            labelOptionFood: "Comida",
-            labelOptionNightLife: "Vida noturna",
-            labelOptionFashion: "Fashion",
-            labelOptionPeople: "Pessoas",
-            labelOptionNature: "Natureza",
-            labelOptionSports: "Desporto",
-            labelOptionTechnics: "Técnica",
-            labelOptionTransport: "Transporte",
+            labelBlurImage: "Desfocar imagem aleatória? :",
+            labelYesToBlurImage: "Sim",
+            labelNoToBlurImage: "Não",
+            labelBlurImgValues: "Valor de desfocagem entre 0 - 10:",
+            labelBlurValue: "Desfocagem:",
             btnButtonGenerator: "Gerar imagem"
 
         },
@@ -64,20 +56,11 @@ window.onload = function() {
             labelColorGreysScale: "Gray scales",
             labelColoredColorScale: "Colored",
             labelImgType: "Image type",
-            labelOptionSelect: "Choose the type of image :",
-            labelOptionAbstract: "Abstract",
-            labelOptionAnimals: "Animal",
-            labelOptionBusiness: "Business",
-            labelOptionCats: "Cats",
-            labelOptionCity: "City",
-            labelOptionFood: "Food",
-            labelOptionNightLife: "Night life",
-            labelOptionFashion: "Fashion",
-            labelOptionPeople: "People",
-            labelOptionNature: "Nature",
-            labelOptionSports: "Sports",
-            labelOptionTechnics: "Technics",
-            labelOptionTransport: "Transport",
+            labelBlurImage: "Blur the random image? :",
+            labelYesToBlurImage: "Yes",
+            labelNoToBlurImage: "No",
+            labelBlurImgValues: "Blur value between 0 - 10:",
+            labelBlurValue: "Blur value:",
             btnButtonGenerator: "Generate image"
 
         }
@@ -93,21 +76,11 @@ window.onload = function() {
             lblImgColor.textContent = language.eng.labelTypeImgColor;
             lblColorGreysScale.textContent = language.eng.labelColorGreysScale;
             lblColoredColorScale.textContent = language.eng.labelColoredColorScale;
-            lblImgType.textContent = language.eng.labelImgType;
-            lblOptionSelect.textContent = language.eng.labelOptionSelect;
-            lblOptionAbstract.textContent = language.eng.labelOptionAbstract;
-            lblOptionAnimals.textContent = language.eng.labelOptionAnimals;
-            lblOptionBusiness.textContent = language.eng.labelOptionBusiness;
-            lblOptionCats.textContent = language.eng.labelOptionCats;
-            lblOptionCity.textContent = language.eng.labelOptionCity;
-            lblOptionFood.textContent = language.eng.labelOptionFood;
-            lblOptionNightLife.textContent = language.eng.labelOptionNightLife;
-            lblOptionFashion.textContent = language.eng.labelOptionFashion;
-            lblOptionPeople.textContent = language.eng.labelOptionPeople;
-            lblOptionNature.textContent = language.eng.labelOptionNature;
-            lblOptionSports.textContent = language.eng.labelOptionSports;
-            lblOptionTechnics.textContent = language.eng.labelOptionTechnics;
-            lblOptionTransport.textContent = language.eng.labelOptionTransport;
+            lblBlurImage.textContent = language.eng.labelBlurImage;
+            lblYesToChooseToBlur.textContent = language.eng.labelYesToBlurImage;
+            lblNoToChooseToBlur.textContent = language.eng.labelNoToBlurImage;
+            lblBlurImgValues.textContent = language.eng.labelBlurImgValues;
+            lblBlurValue.textContent = language.eng.labelBlurValue;
             btnButtonGenerator.textContent = language.eng.btnButtonGenerator;
             document.querySelector('#alturaImagem').setAttribute('placeholder', 'Height');
             document.querySelector('#larguraImagem').setAttribute('placeholder', 'Width');
@@ -123,21 +96,11 @@ window.onload = function() {
             lblImgColor.textContent = language.pt.labelTypeImgColor;
             lblColorGreysScale.textContent = language.pt.labelColorGreysScale;
             lblColoredColorScale.textContent = language.pt.labelColoredColorScale;
-            lblImgType.textContent = language.pt.labelImgType;
-            lblOptionSelect.textContent = language.pt.labelOptionSelect;
-            lblOptionAbstract.textContent = language.pt.labelOptionAbstract
-            lblOptionAnimals.textContent = language.pt.labelOptionAnimals;
-            lblOptionBusiness.textContent = language.pt.labelOptionBusiness;
-            lblOptionCats.textContent = language.pt.labelOptionCats;
-            lblOptionCity.textContent = language.pt.labelOptionCity;
-            lblOptionFood.textContent = language.pt.labelOptionFood;
-            lblOptionNightLife.textContent = language.pt.labelOptionNightLife;
-            lblOptionFashion.textContent = language.pt.labelOptionFashion;
-            lblOptionPeople.textContent = language.pt.labelOptionPeople;
-            lblOptionNature.textContent = language.pt.labelOptionNature;
-            lblOptionSports.textContent = language.pt.labelOptionSports;
-            lblOptionTechnics.textContent = language.pt.labelOptionTechnics;
-            lblOptionTransport.textContent = language.pt.labelOptionTransport;
+            lblBlurImage.textContent = language.pt.labelBlurImage;
+            yesToChooseToBlur.textContent = language.pt.labelYesToBlurImage;
+            noToChooseToBlur.textContent = language.pt.labelNoToBlurImage;
+            lblBlurImgValues.textContent = language.pt.labelBlurImgValues;
+            lblBlurValue.textContent = language.pt.labelBlurValue;
             btnButtonGenerator.textContent = language.pt.btnButtonGenerator;
             document.querySelector('#alturaImagem').setAttribute('placeholder', 'Altura');
             document.querySelector('#larguraImagem').setAttribute('placeholder', 'Largura');
@@ -147,14 +110,14 @@ window.onload = function() {
     for (let i = 0; i < dataReload.length; i++) {
         dataReload[i].addEventListener('click', function() {
             setTimeout(function() {
-                location.reload();
+                window.location.reload();
             }, 100);
         });
     };
 
     // INSTRUCTIONS TO CONTROL SQUARES OBJECTS
 
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 8; i++) {
         const li = document.createElement('li');
         li.classList.add('li-square');
 
@@ -162,8 +125,8 @@ window.onload = function() {
             return Math.random() * (max - min) + min;
         }
 
-        const size = Math.floor(getRandomValues(10, 100));
-        const position = Math.floor(getRandomValues(1, 99));
+        const size = Math.floor(getRandomValues(10, 50));
+        const position = Math.floor(getRandomValues(1, 75));
         const delay = getRandomValues(5, 0.1);
         const duration = getRandomValues(24, 12);
 
@@ -203,8 +166,8 @@ window.onload = function() {
             return Math.random() * (max - min) + min;
         }
 
-        const size = Math.floor(getRandomValues(10, 100));
-        const position = Math.floor(getRandomValues(1, 99));
+        const size = Math.floor(getRandomValues(10, 50));
+        const position = Math.floor(getRandomValues(1, 75));
         const delay = getRandomValues(5, 0.1);
         const duration = getRandomValues(24, 12);
 
@@ -230,6 +193,19 @@ window.onload = function() {
 
 
     }
+
+    // HIDDEN OPTION SCRIPT
+
+    document.querySelector('#inputRange').addEventListener('change', function() {
+        document.querySelector('#rangeValue').innerHTML = this.value;
+    });
+
+
+
+
+
+
+
 
 
 }

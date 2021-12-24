@@ -57,35 +57,33 @@
                                     type="radio" value="cinza" name="colorOption" id="greyImage"></label>
                         <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                         <label for="coloredImage"><span id="lblColoredColorScale">Colorida</span> <input
-                                    type="radio" value="colour" name="colorOption" id="coloredImage"></label> <br>
+                                    type="radio" value="colour" name="colorOption" id="coloredImage"></label>
+                        <br>
                     </div>
 
                     <div class="form-item">
-                        <label for="optionImageType"><span id="lblImgType">Tipo de imagem</span><span
-                                    class="span-required">*</span> : </label>
-                        <select id="optionImageType">
-                                <option value="" id="lblOptionSelect">Escolha o tipo de imagem : </option>
-                                <option value="abstract" id="lblOptionAbstract">Abstracto</option>
-                                <option value="animals" id="lblOptionAnimals">Animal</option>
-                                <option value="business" id="lblOptionBusiness">Negócio</option>
-                                <option value="cats" id="lblOptionCats">Gatos</option>
-                                <option value="city" id="lblOptionCity">Cidade</option>
-                                <option value="food" id="lblOptionFood">Comida</option>
-                                <option value="nightlife" id="lblOptionNightLife">Vida noturna</option>
-                                <option value="fashion" id="lblOptionFashion">Fashion</option>
-                                <option value="people" id="lblOptionPeople">Pessoas</option>
-                                <option value="nature" id="lblOptionNature">Natureza</option>
-                                <option value="sports" id="lblOptionSports">Desporto</option>
-                                <option value="technics" id="lblOptionTechnics">Técnica</option>
-                                <option value="transport" id="lblOptionTransport">Transporte</option>
-                            </select>
+                        <label id="lblBlurImage">Desfocar imagem aleatória? :</label>
+                        <label for="yesToChooseToBlur" id="lblYesToChooseToBlur">Sim</label>
+                        <input type="radio" name="chooseToBlur" id="yesToChooseToBlur" value="sim">
+                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <label for="noToChooseToBlur" id="lblNoToChooseToBlur">Não</label>
+                        <input type="radio" name="chooseToBlur" id="noToChooseToBlur" value="não"><br>
 
-                    </div>
-                    <br>
+                        <div id="section-to-choose-amount-blur">
+                            <label for="" class="option-hidden" id="lblBlurImgValues">Valor de desfocagem entre 0 - 10:</label>
+                            <input type="range" name="" min="0" max="10" value="0" step="1" id="inputRange"> &nbsp;
+                            <span id="blur-area">
+                                    <span id="lblBlurValue">Desfocagem:</span><span id="rangeValue">0</span>
+                            </span>
+                        </div>
+
+                    </div><br>
 
                     <button type="submit" id="btnButtonGenerator">Gerar imagem</button>
                 </form>
+
             </section>
+
             <ul class="squares">
 
             </ul>
@@ -93,7 +91,6 @@
             <ul class="circles">
 
             </ul>
-
 
         </main>
 
@@ -121,7 +118,6 @@
     <script src="libs/bootbox.all.min.js"></script>
     <script src="libs/bootbox.locales.min.js"></script>
     <script src="libs/fontawesome-5.15.4/js/all.min.js"></script>
-
 
 </body>
 
