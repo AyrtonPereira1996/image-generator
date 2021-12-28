@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
     // INSTRUCTIONS TO GENERATE RANDOM PICTURES
 
     $('#btnButtonGenerator').on('click', function() {
@@ -7,20 +9,20 @@ $(document).ready(function() {
             evento.preventDefault();
         });
 
-        var imgType = $('#optionImageType');
+
         var imgWidth = $('#larguraImagem');
         var imgHeight = $('#alturaImagem');
-        var imgColourType = $('input[type="radio"]');
+        var imgColourType = $('input[name="colorOption"]');
+        var imgBlured = $('input[name="chooseToBlur"]');
         var valueOfBlurOption = $('#inputRange').val();
         var urlGenerator = "https://picsum.photos/";
 
-        if (imgType.val() != "" && imgWidth.val() != "" && imgHeight.val() != "" && $('#noToChooseToBlur').is(':checked')) {
-            // $('input, select').css('border-color', '#69385c');
+        if (imgWidth.val() != "" && imgHeight.val() != "" && $('#noToChooseToBlur').is(':checked') && imgColourType.is(':checked') && imgBlured.is(':checked')) {
 
             if ($('#greyImage').is(':checked')) {
 
                 imgColour = "?grayscale";
-                imgType.prop('disabled', true);
+                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -29,10 +31,11 @@ $(document).ready(function() {
 
                 $(':input', '#frmImageGenerator').not(':button, :submit, :reset, :hidden').val("").removeAttr('checked').removeAttr('selected');
                 window.open(urlGenerator, '_blank');
+                window.location.reload();
 
             } else if ($('#coloredImage').is(':checked')) {
 
-                imgType.prop('disabled', true);
+                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -41,16 +44,18 @@ $(document).ready(function() {
 
                 $(':input', '#frmImageGenerator').not(':button, :submit, :reset, :hidden').val("").removeAttr('checked').removeAttr('selected');
                 window.open(urlGenerator, '_blank');
+                window.location.reload();
 
             }
+
         }
-        if (imgType.val() != "" && imgWidth.val() != "" && imgHeight.val() != "" && $('#yesToChooseToBlur').is(':checked')) {
+        if (imgWidth.val() != "" && imgHeight.val() != "" && $('#yesToChooseToBlur').is(':checked') && imgColourType.is(':checked') && imgBlured.is(':checked')) {
 
             if ($('#greyImage').is(':checked') && valueOfBlurOption > 0) {
 
                 imgBlur = "&blur=";
                 imgColour = "?grayscale";
-                imgType.prop('disabled', true);
+                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -59,12 +64,13 @@ $(document).ready(function() {
 
                 $(':input', '#frmImageGenerator').not(':button, :submit, :reset, :hidden').val("").removeAttr('checked').removeAttr('selected');
                 window.open(urlGenerator, '_blank');
+                window.location.reload();
 
             } else if ($('#greyImage').is(':checked') && valueOfBlurOption == 0) {
 
                 imgBlur = "&blur";
                 imgColour = "?grayscale";
-                imgType.prop('disabled', true);
+                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -73,13 +79,14 @@ $(document).ready(function() {
 
                 $(':input', '#frmImageGenerator').not(':button, :submit, :reset, :hidden').val("").removeAttr('checked').removeAttr('selected');
                 window.open(urlGenerator, '_blank');
+                window.location.reload();
 
             }
 
             if ($('#coloredImage').is(':checked') && valueOfBlurOption > 0) {
 
                 imgBlur = "?blur=";
-                imgType.prop('disabled', true);
+                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -88,11 +95,12 @@ $(document).ready(function() {
 
                 $(':input', '#frmImageGenerator').not(':button, :submit, :reset, :hidden').val("").removeAttr('checked').removeAttr('selected');
                 window.open(urlGenerator, '_blank');
+                window.location.reload();
 
             } else if ($('#coloredImage').is(':checked') && valueOfBlurOption == 0) {
 
                 imgBlur = "?blur";
-                imgType.prop('disabled', true);
+                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -101,9 +109,12 @@ $(document).ready(function() {
 
                 $(':input', '#frmImageGenerator').not(':button, :submit, :reset, :hidden').val("").removeAttr('checked').removeAttr('selected');
                 window.open(urlGenerator, '_blank');
+                window.location.reload();
             }
 
-        } else {
+        }
+        if ((imgWidth.val() == "" && imgHeight.val() == "" && !$('#noToChooseToBlur').is(':checked') && !imgColourType.is(':checked') && !imgBlured.is(':checked')) || (imgWidth.val() == "" && imgHeight.val() == "" && !$('#yesToChooseToBlur').is(':checked') && !imgColourType.is(':checked') && !imgBlured.is(':checked'))) {
+
             $('input, select').css('border-color', 'crimson');
             $('.span-required').fadeIn();
 
