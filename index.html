@@ -9,107 +9,52 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>Gerador de Imagens</title>
-
 </head>
 
 <body>
     <div id="container">
+
+        <!-- HEADER SECTION -->
         <header>
             <div id="header-area">
                 <ul>
                     <li><a href="https://github.com/AyrtonPereira1996/image-generator-with-html-css-js-jquery" target="_blank"><i class="fab fa-github fa-2x fa-fw"></i></a></li>
             </div>
         </header>
-
         <div id="language-section">
-            <p><span id="lblLang">Escolha o idioma:</span> <a href="#pt" class="option-language" id="pt-option-language" data-reload>PT <img src="icons/portugal.png"
-                            alt="portuguese language flag"></a> <a href="#eng" class="option-language" id="eng-option-language" data-reload>ENG <img src="icons/united-kingdom.png"
-                            alt="english language flag"></a></p>
+            <p><span id="lblLang">Escolha o idioma:</span><a href="#pt" class="option-language" id="pt-option-language" data-reload>PT <img src="icons/portugal.png" alt="portuguese language flag"></a><a href="#eng" class="option-language" id="eng-option-language"
+                    data-reload>ENG <img src="icons/united-kingdom.png" alt="english language flag"></a></p>
         </div>
+
+        <!-- MAIN SECTION -->
         <main>
-
-
             <section id="main-section">
                 <h1 id="lblMainTitle">Gerador de Imagens</h1>
-
-
-                <form id="frmImageGenerator">
-
-                    <label class="special-label"><span id="lblWhatToDo">Preencha os campos abaixo para gerar a
-                                imagem:</span> </label><br>
-
-                    <span class="span-required" id="lblFieldRequired">* campos obrigatórios</span>
-
-                    <div class="form-item">
-                        <label for=""><span id="lblImgDimensions">Dimensão da imagem :</span><span
-                                    class="span-required">*</span></label>
-                        <input type="number" id="alturaImagem" placeholder="Altura">
-                        <span>X</span>
-                        <input type="number" id="larguraImagem" placeholder="Largura">
-                        <br>
-                    </div>
-
-                    <div class="form-item">
-                        <label for="" id="colorOptionLabel"><span id="lblImgColor">Côr da imagem</span><span
-                                    class="span-required">*</span> :
-                            </label>
-                        <label for="greyImage"><span id="lblColorGreysScale">Tons de cinza</span> <input
-                                    type="radio" value="cinza" name="colorOption" id="greyImage"></label>
-                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-                        <label for="coloredImage"><span id="lblColoredColorScale">Colorida</span> <input
-                                    type="radio" value="colour" name="colorOption" id="coloredImage"></label>
-                        <br>
-                    </div>
-
-                    <div class="form-item">
-                        <label id="lblBlurImage">Desfocar imagem aleatória? :</label>
-                        <label for="yesToChooseToBlur" id="lblYesToChooseToBlur">Sim</label>
-                        <input type="radio" name="chooseToBlur" id="yesToChooseToBlur" value="sim">
-                        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-                        <label for="noToChooseToBlur" id="lblNoToChooseToBlur">Não</label>
-                        <input type="radio" name="chooseToBlur" id="noToChooseToBlur" value="não"><br>
-
-                        <div id="section-to-choose-amount-blur">
-                            <label for="" class="option-hidden" id="lblBlurImgValues">Valor de desfocagem entre 0 - 10:</label>
-                            <input type="range" name="imgBlur" min="0" max="10" value="0" step="1" id="inputRange"> &nbsp;
-                            <span id="blur-area">
-                                    <span id="lblBlurValue">Desfocagem:</span><span id="rangeValue">0</span>
+                <form id="frmImageGenerator"><label class="special-label"><span id="lblWhatToDo">Preencha os campos abaixo para gerar a imagem:</span></label><br><span class="span-required" id="lblFieldRequired">* campos obrigatórios</span>
+                    <div class="form-item"><label for=""><span id="lblImgDimensions">Dimensão da imagem :</span><span class="span-required">*</span></label><input type="number" id="alturaImagem" placeholder="Altura"><span>X</span><input type="number" id="larguraImagem" placeholder="Largura"><br></div>
+                    <div class="form-item"><label for="" id="colorOptionLabel"><span id="lblImgColor">Côr da imagem</span><span class="span-required">*</span>: </label><label for="greyImage"><span id="lblColorGreysScale">Tons de cinza</span><input type="radio" value="cinza" name="colorOption" id="greyImage"></label><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <label for="coloredImage"><span id="lblColoredColorScale">Colorida</span><input type="radio" value="colour" name="colorOption" id="coloredImage"></label><br></div>
+                    <div class="form-item"><label id="lblBlurImage">Desfocar imagem aleatória? :</label><label for="yesToChooseToBlur" id="lblYesToChooseToBlur">Sim</label><input type="radio" name="chooseToBlur" id="yesToChooseToBlur" value="sim"><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <label for="noToChooseToBlur" id="lblNoToChooseToBlur">Não</label><input type="radio" name="chooseToBlur" id="noToChooseToBlur" value="não"><br>
+                        <div id="section-to-choose-amount-blur"><label for="" class="option-hidden" id="lblBlurImgValues">Valor de desfocagem entre 0 - 10:</label><input type="range" name="imgBlur" min="0" max="10" value="0" step="1" id="inputRange">&nbsp; <span id="blur-area"><span id="lblBlurValue">Desfocagem:</span>
+                            <span id="rangeValue">0</span>
                             </span>
                         </div>
-
-                    </div><br>
-
-                    <button type="submit" id="btnButtonGenerator">Gerar imagem</button>
-                </form>
-
+                    </div><br><button type="submit" id="btnButtonGenerator">Gerar imagem</button></form>
             </section>
-
-            <ul class="squares">
-
-            </ul>
-
-            <ul class="circles">
-
-            </ul>
-
+            <ul class="squares"></ul>
+            <ul class="circles"></ul>
         </main>
+
+        <!-- FOOTER SECTION -->
 
         <footer>
             <section id="footer-section">
-                <p><a href="https://www.linkedin.com/in/ayrton-pereira/" target="_blank"><i
-                                class="fab fa-linkedin"></i>&nbsp;LINKEDIN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://web.facebook.com/ayrton96/" target="_blank"><i
-                                class="fab fa-facebook-square"></i>&nbsp;FACEBOOK</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/AyrtonPereira1996" target="_blank"><i
-                                class="fab fa-github-square"></i>&nbsp;GITHUB</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="https://www.instagram.com/ayrton_satar" target="_blank"> <i class="fab fa-instagram-square"></i>&nbsp;INSTAGRAM</a>
-                </p>
-
+                <p><a href="https://www.linkedin.com/in/ayrton-pereira/" target="_blank"><i class="fab fa-linkedin"></i>&nbsp;LINKEDIN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://web.facebook.com/ayrton96/" target="_blank"><i class="fab fa-facebook-square"></i>&nbsp;FACEBOOK</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="https://github.com/AyrtonPereira1996" target="_blank"><i class="fab fa-github-square"></i>&nbsp;GITHUB</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="https://www.instagram.com/ayrton_satar" target="_blank"><i class="fab fa-instagram-square"></i>&nbsp;INSTAGRAM</a></p>
             </section>
         </footer>
-
-
-
     </div>
-
     <script src="libs/jquery v3.6.0./jquery.js"></script>
     <script src="libs/popper.js"></script>
     <script src="libs/bootstrap-4.5.2/js/bootstrap.min.js"></script>
@@ -118,7 +63,6 @@
     <script src="libs/bootbox.all.min.js"></script>
     <script src="libs/bootbox.locales.min.js"></script>
     <script src="libs/fontawesome-5.15.4/js/all.min.js"></script>
-
 </body>
 
 </html>

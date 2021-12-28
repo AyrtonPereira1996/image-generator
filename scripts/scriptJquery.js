@@ -22,7 +22,6 @@ $(document).ready(function() {
             if ($('#greyImage').is(':checked')) {
 
                 imgColour = "?grayscale";
-                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -35,7 +34,6 @@ $(document).ready(function() {
 
             } else if ($('#coloredImage').is(':checked')) {
 
-                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -55,7 +53,6 @@ $(document).ready(function() {
 
                 imgBlur = "&blur=";
                 imgColour = "?grayscale";
-                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -70,7 +67,6 @@ $(document).ready(function() {
 
                 imgBlur = "&blur";
                 imgColour = "?grayscale";
-                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -86,7 +82,6 @@ $(document).ready(function() {
             if ($('#coloredImage').is(':checked') && valueOfBlurOption > 0) {
 
                 imgBlur = "?blur=";
-                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
@@ -100,7 +95,6 @@ $(document).ready(function() {
             } else if ($('#coloredImage').is(':checked') && valueOfBlurOption == 0) {
 
                 imgBlur = "?blur";
-                // imgType.prop('disabled', true);
                 imgWidth.prop('disabled', true);
                 imgHeight.prop('disabled', true);
                 imgColourType.prop('disabled', true);
